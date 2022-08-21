@@ -3,17 +3,17 @@ import time, os
 current_player = 1
 player_first_name = "Player 1"
 player_second_name = "Player 2"
-board = list(range(1, 10))
-board = [1,2,3,4,5,6,7,8,9]
+board = [i for i in range(1, 10)]
 win_comp = ((1, 2, 3), (4, 5, 6), (7, 8, 9), (1, 4, 7), (2, 5, 8), (3, 6, 9), (1, 5, 9), (3, 5, 7))
 player_win = "Player"
 RED_COLOR = "\u001b[38;5;9m"
 RESET_COLOR = "\u001b[0m"
 YELLOW_COLOR = "\u001b[38;5;11m"
 
-
-turn = YELLOW_COLOR+"O"+RESET_COLOR
+turn = YELLOW_COLOR + "O" + RESET_COLOR
 os.system("\n")
+
+
 def name_players():
     """
     Func input name of players
@@ -30,12 +30,12 @@ def toggle_players():
     global current_player, turn, player_win
     if current_player == 1:
         current_player = 2
-        turn = RED_COLOR+"X"+RESET_COLOR  # player 2 turn+color
+        turn = RED_COLOR + "X" + RESET_COLOR  # player 2 turn+color
         player_win = player_second_name  # winner first player
         pass
     else:
         current_player = 1
-        turn = YELLOW_COLOR+"O"+RESET_COLOR  # player 1 turn +color
+        turn = YELLOW_COLOR + "O" + RESET_COLOR  # player 1 turn +color
         player_win = player_first_name  # winner second player
         pass
 
@@ -96,7 +96,7 @@ def draw_winner():
     print(f"{star_line}\n*WIN!:*  \n{star_line}")
     for i in range(len(player_win)):
         time.sleep(0.1)
-        print(RED_COLOR+player_win[i]+RESET_COLOR, end="")
+        print(RED_COLOR + player_win[i] + RESET_COLOR, end="")
     print(f"\n{star_line}")
     pass
 
@@ -107,10 +107,12 @@ def draw_start_game():
     :return:
     """
 
-    start_mess = RED_COLOR+"Start New Game [Y] or [Any key to break]?"+RESET_COLOR
+    start_mess = RED_COLOR + "Start New Game [Y] or [Any key to break]?" + RESET_COLOR
     star_line = len(start_mess) * "*"
     print(f"\n{star_line}")
     for j in range(len(start_mess)):
         time.sleep(0.1)
         print(start_mess[j], end="")
     print(f"\n{star_line}")
+
+
