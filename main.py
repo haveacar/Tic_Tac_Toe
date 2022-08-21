@@ -2,6 +2,9 @@ from program.game import name_players, board_view, \
     turn_input_player, toggle_players, check_win, draw_winner, draw_start_game
 
 """ Tic Tac Toe Game
+******************************************************
+Start New Game [Y] or [Any key to break]?
+******************************************************
 _____________
 dani: O
 moshe: X
